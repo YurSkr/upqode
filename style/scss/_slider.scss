@@ -1,0 +1,95 @@
+/*Slider Container*/
+
+.carousel__container {
+  position: relative;
+  margin-top: 71px;
+  opacity: 0.8;
+  width: 100%;
+
+  .main__paragraph {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+
+    h2, span {
+      color: #ffffff;
+      font-family: $latoBold;
+      text-transform: uppercase;
+      letter-spacing: 4.26px;
+      font-size: 64px;
+      margin: 0;
+    }
+
+    span {
+      color: #fff200;
+    }
+
+    p {
+      margin-top: 30px;
+      max-width: 720px;
+      text-align: center;
+      color: #ffffff;
+      font-size: 16px;
+      letter-spacing: 0.64px;
+    }
+  }
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .carousel-item {
+    height: 790px;
+    background-color: #232323;
+    background-size: cover;
+  }
+
+  .carousel-item:first-child {
+    background: $gradient, url("./../../images/background-carousel4.png");;
+  }
+
+  .carousel-item:nth-child(2) {
+    background: $gradient, url("./../../images/background-carousel1.png");;
+  }
+
+  .carousel-item:nth-child(3) {
+    background: $gradient, url("./../../images/background-carousel2.png");;
+  }
+
+  .carousel-item:last-child {
+    background: $gradient, url("./../../images/background-carousel3.png");
+  }
+}
+
+.carousel-control-next, .carousel-control-prev {
+  width: 10%;
+}
+
+.carousel-control-prev__icon, .carousel-control-next__icon {
+  font-size: 25px;
+  padding: 10px 25px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.carousel-indicators {
+  margin-bottom: 30px;
+
+  li {
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color: #b7b7b7;
+  }
+}
+
+.carousel-indicators.active {
+  background-color: #ffffff;
+}

@@ -1,0 +1,123 @@
+.our-products {
+  position: relative;
+  width: 100vw;
+  margin-top: 115px;
+
+  .our-products__banner {
+    background: url("./../../images/banner.png") center no-repeat;
+    background-size: 100vw 161px;
+    position: absolute;
+    left: 0;
+    top: -17%;
+    height: 161px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  h3, span {
+    font-size: 35px;
+    font-family: $latoBold;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 1.4px;
+    margin-top: 45px;
+  }
+
+  span {
+    color: #ffff00;
+  }
+
+  .our-products__container {
+    background: url("./../../images/our-products-background.png");
+    background-size: cover;
+
+    .carousel-item-next, .carousel-item-prev, .carousel-item.active {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .carousel-item-left, .carousel-item-right {
+      display: none;
+    }
+
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+
+      .carousel-indicators {
+        margin-bottom: 65px;
+
+        li {
+          color: #d7d7d7;
+        }
+
+        .active {
+          background-color: #503392;
+          font-size: 7px;
+        }
+      }
+
+      .active {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .carousel__page {
+        margin-top: 155px;
+        margin-bottom: 175px;
+      }
+
+      .product {
+        width: 335px;
+        display: flex;
+        align-items: center;
+
+        img {
+          width: 145px;
+          height: 145px;
+        }
+
+        div {
+          max-width: 160px;
+          margin-left: 25px;
+
+          h5 {
+            color: #232323;
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.74px;
+            margin: 0;
+          }
+
+          p:nth-child(2) {
+            color: #503392;
+            font-size: 16px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+          }
+
+          p:last-child {
+            margin: 0;
+            color: #373737;
+            font-size: 14px;
+            font-family: $latoLight;
+            letter-spacing: 0.46px;
+          }
+        }
+      }
+
+      .product {
+        margin-left: 55px;
+      }
+
+      .product:first-child, .product:nth-child(4) {
+        margin-left: 0;
+      }
+
+      .product:nth-child(n+4) {
+        margin-top: 100px;
+      }
+    }
+  }
+}

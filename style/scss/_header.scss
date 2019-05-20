@@ -1,0 +1,226 @@
+header {
+  width: 100vw;
+  background-color: #ffffff;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+
+    .logo {
+      width: 135px;
+      height: 24px;
+      font-family: 'Beyno', sans-serif;
+      font-size: 30px;
+      line-height: 24px;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin: 0;
+      color: #503392;
+
+      span {
+        color: #009dda;
+        font-weight: 900;
+      }
+    }
+
+    /*Navbar with Dropdown Menu*/
+
+    nav {
+      display: flex;
+      align-items: center;
+
+      ul {
+        display: flex;
+        width: 455px;
+        margin: 0 15px 0 0;
+
+        .current {
+          font-family: $latoBold;
+        }
+
+        li {
+          width: 25%;
+          text-align: center;
+          position: relative;
+
+          a {
+            cursor: pointer;
+            text-decoration: none;
+            color: #232323;
+            font-size: 16px;
+            letter-spacing: 0.64px;
+          }
+
+          a:hover {
+            font-family: $latoHeavy;
+          }
+        }
+
+        .dropdown {
+          position: absolute;
+          opacity: 0;
+          left: 16%;
+          height: 132px;
+          visibility: hidden;
+          transition: ease-out .35s;
+
+          .dropdown-levels {
+            display: flex;
+            flex-direction: column;
+            background-color: $darkOpacity;
+            width: 183px;
+            padding: 28px 0;
+            border: none;
+            border-radius: 0;
+            margin: 22px 0 0 0;
+            border-top: 2px solid #fff200;
+
+            .dropdown__submenu {
+              top: 0;
+              text-align: left;
+              width: 90%;
+              left: 10%;
+              position: relative;
+
+              a {
+                display: inline-block;
+                width: 100%;
+                color: #fdfdfd;
+                font-size: 14px;
+                font-family: $latoLight;
+                letter-spacing: 1.05px;
+                height: 25%;
+                padding: 0;
+              }
+
+              a:hover {
+                color: #fff200
+              }
+
+              span {
+                font-size: 20px;
+              }
+            }
+          }
+        }
+
+        .dropdown__main:hover .dropdown, .dropdown__main .dropdown__main:hover .dropdown {
+          opacity: 1;
+          visibility: visible;
+          transition: ease-in .35s;
+        }
+
+        .dropdown__main {
+          .dropdown__main {
+            .dropdown {
+              position: absolute;
+              left: 100%;
+              top: -35px;
+              opacity: 0;
+              visibility: hidden;
+              transition: ease-out .35s;
+            }
+          }
+        }
+      }
+    }
+
+    #hamburger {
+      display: none;
+      width: 40px;
+      top: -13px;
+      position: relative;
+      transform: rotate(0deg);
+      transition: .5s ease-in-out;
+      cursor: pointer;
+
+      span {
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        background-color: #009dda;
+        border-radius: 9px;
+        opacity: 1;
+        left: 0;
+        transform: rotate(0deg);
+        transition: .25s ease-in-out;
+      }
+
+      span:nth-child(1) {
+        top: 0;
+      }
+
+      span:nth-child(2) {
+        top: 10px;
+      }
+
+      span:nth-child(3) {
+        top: 20px;
+      }
+    }
+
+    #hamburger.open {
+      display: block;
+    }
+
+    #hamburger.open span:nth-child(1) {
+      top: 10px;
+      transform: rotate(135deg);
+    }
+
+    #hamburger.open span:nth-child(2) {
+      opacity: 0;
+      left: -60px;
+    }
+
+    #hamburger.open span:nth-child(3) {
+      top: 10px;
+      transform: rotate(-135deg);
+    }
+
+    /*Search block*/
+    .search-input__block {
+      width: 180px;
+      display: flex;
+      height: 31px;
+
+      input {
+        border: none;
+        background-color: #8d78b7;
+        width: 70%;
+        opacity: 0.2;
+        border-left: 5px solid transparent;
+      }
+
+      input:hover {
+        opacity: 1;
+        transition: all 0.3s ease-out;
+      }
+
+      input:focus {
+        outline: none;
+        opacity: 1;
+      }
+
+      button {
+        cursor: pointer;
+        border: none;
+        width: 30%;
+        background: rgba(141, 120, 183, 0.2);
+      }
+
+      button:hover {
+        background: #8d78b7;
+        transition: all 0.3s ease-out;
+      }
+
+      .fa, .fab, .fal, .far, .fas {
+        line-height: 0;
+        font-weight: 600;
+        font-size: 13px;
+      }
+    }
+  }
+}

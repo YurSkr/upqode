@@ -1,0 +1,113 @@
+.about-us {
+  margin-top: 115px;
+
+  h3, span {
+    color: #232323;
+    font-size: 35px;
+    font-family: $latoBold;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+  }
+
+  span {
+    color: #009dda;
+  }
+
+  p {
+    color: #999999;
+    font-size: 14px;
+    letter-spacing: 0.56px;
+  }
+
+  .paragraph {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      color: #009dda;
+    }
+
+    span {
+      color: #232323;
+    }
+
+    p:nth-child(2) {
+      margin-top: 30px;
+      margin-bottom: 55px;
+    }
+
+    p:last-child {
+      color: #373737;
+      font-size: 14px;
+      letter-spacing: 0.56px;
+      margin-bottom: 5px;
+    }
+  }
+
+  .about-us__firstContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 170px;
+
+    img {
+      max-width: 345px;
+      max-height: 590px;
+    }
+
+    .about-us-info {
+      max-width: 555px;
+      margin-bottom: 35px;
+    }
+  }
+
+  .get-it {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+    p {
+      max-width: 700px;
+      margin-top: 10px;
+      margin-bottom: 80px;
+    }
+  }
+
+  .our__skills {
+    .skill__item div:first-child {
+      display: flex;
+      justify-content: space-between;
+
+      p {
+        margin: 40px 0 20px 0;
+        color: #444444;
+        font-size: 13px;
+        font-family: $latoBold;
+        text-transform: uppercase;
+        letter-spacing: 0.65px;
+      }
+    }
+
+    .skill__item div:last-child {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      border: 1px solid #dddddd;
+      height: 9px;
+      width: 100%;
+      justify-content: center;
+      padding: 0 2px;
+
+      hr {
+        width: 0;
+        background-color: #009dda;
+        transition: width 1s linear;
+        border: none;
+        padding: 1.5px 0;
+        margin: 0;
+      }
+    }
+  }
+}

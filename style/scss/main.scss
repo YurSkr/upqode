@@ -1,0 +1,363 @@
+@font-face {
+  font-family: 'Beyno';
+  src: url('../../fonts/beyno/BEYNO.otf') format('opentype');
+}
+
+
+@font-face {
+  font-family: 'latobold';
+  src: url('../../fonts/lato/lato-bold-webfont.woff2') format('woff2'),
+  url('../../fonts/lato/lato-bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latoheavy';
+  src: url('../../fonts/lato/lato-heavy-webfont.woff2') format('woff2'),
+  url('../../fonts/lato/lato-heavy-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+@font-face {
+  font-family: 'latolight';
+  src: url('../../fonts/lato/lato-light-webfont.woff2') format('woff2'),
+  url('../../fonts/lato/lato-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'latoregular';
+  src: url('../../fonts/lato/lato-regular-webfont.woff2') format('woff2'),
+  url('../../fonts/lato/lato-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$gradient: linear-gradient(to right, rgba(0, 191, 243, 0.8) 0%, rgba(103, 58, 183, 0.8) 51%, rgba(80, 51, 146, 0.8) 100%);
+$latoLight: 'latolight', sans-serif;
+$latoRegular: 'latoregular', sans-serif;
+$latoBold: 'latobold', sans-serif;
+$latoHeavy: 'latoheavy', sans-serif;
+$greyOpacity: rgba(255, 255, 255, 0.5);
+$darkOpacity: rgba(0, 0, 0, 0.65);
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: $latoRegular;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 0;
+}
+
+/*
+Header
+ */
+
+@import "header";
+
+/*
+Slider Container
+*/
+
+@import "slider";
+
+/*
+Our Skill Container
+*/
+
+@import "skills";
+
+/*
+Our products container
+*/
+
+@import "products";
+
+/*
+About us
+*/
+
+@import "about";
+
+/*
+Footer
+*/
+
+@import "footer";
+
+/*
+Adaptable
+*/
+@media screen and (max-width: 1199.98px) {
+  .container {
+    max-width: 1000px;
+  }
+  .carousel-control-next, .carousel-control-prev {
+    top: 5%;
+  }
+  .our-skills .our-skills__block {
+    width: 840px;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    .skill__item:nth-child(n + 4) {
+      margin-top: 30px;
+    }
+  }
+  .our-products .our-products__container .products .product {
+    margin-left: 0;
+    width: 320px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    max-width: 980px;
+  }
+  header .container {
+    .search-input__block {
+      display: none;
+    }
+
+    nav {
+      display: none;
+
+      ul {
+        margin: 0;
+      }
+    }
+
+    #hamburger {
+      display: block;
+    }
+
+    .nav__open {
+      display: flex;
+    }
+  }
+  .our-products {
+    .our-products__banner {
+      top: -12%;
+    }
+
+    .our-products__container .products {
+      .product {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .product:nth-child(n+4) {
+        margin-top: 0;
+      }
+
+      .product:nth-child(n+3) {
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+  .carousel__container .main__paragraph {
+    p {
+      font-size: 14px;
+      margin-top: 50px;
+    }
+
+    h2, span {
+      font-size: 52px;
+      text-align: center;
+    }
+  }
+  .our-products .our-products__banner {
+    top: -12%;
+  }
+  .about-us .about-us__firstContainer {
+    justify-content: center;
+
+    .ipad {
+      display: none;
+    }
+  }
+  .our-skills .our-skills__block {
+    .skill__item:nth-child(3) {
+      margin-left: 0;
+      margin-top: 30px;
+    }
+
+    width: 500px;
+  }
+  footer .contacts .contacts-form__forMap .contacts-form {
+    justify-content: center;
+    width: max-content;
+
+    .forms {
+      margin-left: 40px
+    }
+
+    .contacts-container {
+      margin-left: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .container {
+    max-width: 530px;
+  }
+  header .container .nav__open {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5%;
+    top: 5%;
+    left: 0;
+    background-color: white;
+    height: 70px;
+    width: 100%;
+    z-index: -1;
+  }
+  .our-products {
+    .our-products__banner {
+      top: -5%;
+    }
+
+    .our-products__container .products {
+      .product {
+        width: 100%;
+      }
+
+      .product:first-child {
+        margin-bottom: 50px;
+      }
+    }
+  }
+  footer .contacts .contacts-form__forMap .contacts-form {
+    padding: 40px 0;
+    flex-direction: column-reverse;
+    height: max-content;
+    width: max-content;
+    align-items: center;
+
+    .contacts-container {
+      margin-right: 40px;
+      max-width: max-content;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      p:last-child {
+        margin-bottom: 35px;
+      }
+    }
+
+    .forms {
+      margin-right: 40px
+    }
+  }
+}
+
+@media screen and (max-width: 575.98px) {
+  .container {
+    max-width: 310px;
+  }
+  header .container {
+    nav ul .dropdown {
+      left: -120%;
+    }
+
+    .nav__open {
+      padding-left: 0;
+    }
+  }
+  .carousel__container {
+    .carousel-control-next, .carousel-control-prev {
+      width: unset;
+      top: -2%;
+    }
+
+    .main__paragraph {
+      h2 {
+        font-size: 33px;
+      }
+
+      span {
+        font-size: 33px;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+  .our-products .our-products__banner {
+    top: -8%;
+  }
+  .our-skills .our-skills__block {
+    width: 200px;
+
+    .skill__item {
+      margin: 0;
+    }
+
+    .skill__item:first-child {
+      margin-bottom: 30px;
+    }
+  }
+  footer {
+    .contacts .contacts-form__forMap .contacts-form {
+      padding: 40px 10px;
+
+      .forms {
+        width: 300px;
+        margin: 0;
+
+        form div:first-child input {
+          width: 130px;
+        }
+      }
+
+      ::placeholder {
+        font-size: 14px;
+      }
+
+      .contacts-container {
+        margin: 0;
+
+        p:first-child {
+          max-width: 200px;
+          text-align: center;
+        }
+      }
+
+      label {
+        font-size: 14px !important;
+      }
+
+      input[type=submit] {
+        width: 90px !important;
+        height: 35px !important;
+      }
+    }
+
+    .footer p {
+      max-width: 190px;
+      font-size: 10px;
+      margin: 0 10px 5px 10px;
+    }
+  }
+}
