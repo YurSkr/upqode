@@ -1,8 +1,8 @@
 var skillsHr = document.getElementsByClassName('skillsHr');
-var getCords = (hr) => {
+function getCords(hr) {
     return hr.getBoundingClientRect().bottom + window.pageYOffset - window.innerHeight + 40 < window.pageYOffset;
 };
-window.onscroll = function () {
+window.onscroll = function() {
     if (getCords(skillsHr[0])) {
         skillsHr[0].style.width = '79%';
     }
