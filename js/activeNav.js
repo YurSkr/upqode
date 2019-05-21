@@ -6,21 +6,19 @@ for (var i = 0; i < aElements.length; i++) {
         var a = aElements[i];
         a.addEventListener('click', function(event) {
             var current = document.getElementsByClassName('activeNav')[0];
-            current.classList.remove('activeNav');
+            return current.classList.remove('activeNav');
             var thisA = event.target;
-            thisA.classList.add('activeNav');
             if (dropdownMain.classList.contains('activeNav')) {
                 dropdownMain.classList.remove('activeNav')
-            }
+            } else  return thisA.classList.add('activeNav');
         });
         (function () {
             for (var j = 0; j < productsA.length; j++) {
                 var dropdownAElement = productsA[j];
                 dropdownAElement.addEventListener('click', function() {
-                    dropdownMain.classList.add('activeNav');
                     if (a.classList.contains('activeNav')) {
-                        a.classList.remove('activeNav')
-                    }
+                        return a.classList.remove('activeNav')
+                    } else return dropdownMain.classList.add('activeNav');
                 });
                 dropdownAElement.setAttribute('href', '#products');
             }
@@ -40,7 +38,7 @@ window.addEventListener('scroll', function() {
         return aElements[number].classList.add('activeNav')
     }
     function removeClass(number) {
-        aElements[number].classList.remove('activeNav');
+        return aElements[number].classList.remove('activeNav');
     }
     var windowFromTop = window.scrollY + fixedTop.offsetHeight;
     if (moreThen(0) && lessThen(1)) {
