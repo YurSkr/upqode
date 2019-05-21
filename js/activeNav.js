@@ -1,3 +1,4 @@
+alert('SUKAAAA')
 const aElements = document.querySelectorAll('.main-nav__a');
 const dropdownMain = document.querySelector('.dropdown__main');
 const productsA = document.querySelectorAll('.dropdown-levels a');
