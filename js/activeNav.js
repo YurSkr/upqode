@@ -1,17 +1,19 @@
 var aElements = document.querySelectorAll('.main-nav__a');
 var dropdownMain = document.querySelector('.dropdown__main');
 var productsA = document.querySelectorAll('.dropdown-levels a');
-for (var a of aElements) {
+for (var i = 0; i < aElements.length; i++) {
+    var a = aElements[i];
     a.addEventListener('click', (event) => {
-        let current = document.getElementsByClassName('activeNav')[0];
+        var current = document.getElementsByClassName('activeNav')[0];
         current.classList.remove('activeNav');
-        let thisA = event.target;
+        var thisA = event.target;
         thisA.classList.add('activeNav');
         if (dropdownMain.classList.contains('activeNav')) {
             dropdownMain.classList.remove('activeNav')
         }
     });
-    for (var dropdownAElement of productsA) {
+    for (var j = 0; j < productsA.length; j++) {
+        var dropdownAElement = productsA[j];
         dropdownAElement.addEventListener('click', () => {
             dropdownMain.classList.add('activeNav');
             if (a.classList.contains('activeNav')) {
@@ -24,18 +26,18 @@ for (var a of aElements) {
 var fixedTop = document.querySelector('.fixed-top');
 var section = document.querySelectorAll('.section');
 window.addEventListener('scroll', () => {
-    var moreThen = (number) => {
+    function moreThen(number) {
         return windowFromTop > section[number].offsetTop
-    };
-    var lessThen = (number) => {
+    }
+    function lessThen(number) {
         return windowFromTop < section[number].offsetTop
-    };
-    var addClass = (number) => {
+    }
+    function addClass(number){
         return aElements[number].classList.add('activeNav')
-    };
-    var removeClass = (number) => {
+    }
+    function removeClass(number) {
         aElements[number].classList.remove('activeNav');
-    };
+    }
     var windowFromTop = window.scrollY + fixedTop.offsetHeight;
     if (moreThen(0) && lessThen(1)) {
         addClass(0)
@@ -50,6 +52,4 @@ window.addEventListener('scroll', () => {
         addClass(2)
     } else removeClass(2)
 });
-
-
 
