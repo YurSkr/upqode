@@ -27,8 +27,6 @@ for (var i = 0; i < aElements.length; i++) {
         })();
     })();
 }
-if (ar isIE = /*@cc_on!@*/false || !!document.documentMode;) {
-} else {
 var fixedTop = document.querySelector('.fixed-top');
 var section = document.querySelectorAll('.section');
 window.addEventListener('scroll', function() {
@@ -58,4 +56,4 @@ window.addEventListener('scroll', function() {
         addClass(2)
     } else removeClass(2)
 });
-}
+
