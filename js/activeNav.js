@@ -42,8 +42,7 @@ window.addEventListener('scroll', function() {
     function removeClass(number) {
         return aElements[number].classList.remove('activeNav');
     }
-    var scrollTop = window.scrollY || document.body.scrollTop || 0;
-    var windowFromTop = scrollTop + fixedTop.offsetHeight;
+    var windowFromTop = pageYOffset + fixedTop.offsetHeight;
     if (moreThen(0) && lessThen(1)) {
          addClass(0)
     } else removeClass(0);
