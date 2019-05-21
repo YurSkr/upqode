@@ -1,7 +1,7 @@
-const dropdownItems = document.getElementsByClassName('dropdown__submenu');
+var dropdownItems = document.getElementsByClassName('dropdown__submenu');
 
-for (const dropdownItem of dropdownItems) {
-    let dropdownItemChild = dropdownItem.firstChild;
+for (var dropdownItem of dropdownItems) {
+    var dropdownItemChild = dropdownItem.firstChild;
     dropdownItem.addEventListener('mouseenter', () => {
         dropdownItemChild.firstChild.innerHTML = '&raquo; '
     });
