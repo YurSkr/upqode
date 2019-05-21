@@ -1,6 +1,7 @@
 var dropdownItems = document.getElementsByClassName('dropdown__submenu');
 
-for (var dropdownItem of dropdownItems) {
+for (var i = 0; i < dropdownItems.length; i++) {
+    var dropdownItem = dropdownItems[i];
     var dropdownItemChild = dropdownItem.firstChild;
     dropdownItem.addEventListener('mouseenter', function() {
         dropdownItemChild.firstChild.innerHTML = '&raquo; '
