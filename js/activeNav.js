@@ -1,7 +1,7 @@
-const aElements = document.querySelectorAll('.main-nav__a');
-const dropdownMain = document.querySelector('.dropdown__main');
-const productsA = document.querySelectorAll('.dropdown-levels a');
-for (const a of aElements) {
+var aElements = document.querySelectorAll('.main-nav__a');
+var dropdownMain = document.querySelector('.dropdown__main');
+var productsA = document.querySelectorAll('.dropdown-levels a');
+for (var a of aElements) {
     a.addEventListener('click', (event) => {
         let current = document.getElementsByClassName('activeNav')[0];
         current.classList.remove('activeNav');
@@ -11,7 +11,7 @@ for (const a of aElements) {
             dropdownMain.classList.remove('activeNav')
         }
     });
-    for (const dropdownAElement of productsA) {
+    for (var dropdownAElement of productsA) {
         dropdownAElement.addEventListener('click', () => {
             dropdownMain.classList.add('activeNav');
             if (a.classList.contains('activeNav')) {
@@ -21,22 +21,22 @@ for (const a of aElements) {
         dropdownAElement.setAttribute('href', '#products');
     }
 }
-const fixedTop = document.querySelector('.fixed-top');
-const section = document.querySelectorAll('.section');
+var fixedTop = document.querySelector('.fixed-top');
+var section = document.querySelectorAll('.section');
 window.addEventListener('scroll', () => {
-    const moreThen = (number) => {
+    var moreThen = (number) => {
         return windowFromTop > section[number].offsetTop
     };
-    const lessThen = (number) => {
+    var lessThen = (number) => {
         return windowFromTop < section[number].offsetTop
     };
-    const addClass = (number) => {
+    var addClass = (number) => {
         return aElements[number].classList.add('activeNav')
     };
-    const removeClass = (number) => {
+    var removeClass = (number) => {
         aElements[number].classList.remove('activeNav');
     };
-    let windowFromTop = window.scrollY + fixedTop.offsetHeight;
+    var windowFromTop = window.scrollY + fixedTop.offsetHeight;
     if (moreThen(0) && lessThen(1)) {
         addClass(0)
     } else removeClass(0);
