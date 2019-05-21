@@ -1,5 +1,5 @@
-const skillsHr = document.getElementsByClassName('skillsHr');
-let getCords = (hr) => {
+var skillsHr = document.getElementsByClassName('skillsHr');
+var getCords = (hr) => {
     return hr.getBoundingClientRect().bottom + window.pageYOffset - window.innerHeight + 40 < window.pageYOffset;
 };
 window.onscroll = function () {
